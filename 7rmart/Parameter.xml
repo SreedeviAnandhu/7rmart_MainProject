@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="username" value="admin"></parameter>
+<parameter name="password" value="hello"></parameter>
+<test name="parameter">
+<classes>
+<class name="TestScript.LoginTest">
+<methods>
+<include name = "verifyTheUserIsAbleToLoginWithIncorrectPassword"></include>
+</methods>
+</class>
+</classes>
+</test>
+</suite>
