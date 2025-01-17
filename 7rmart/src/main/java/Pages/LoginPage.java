@@ -26,14 +26,14 @@ public class LoginPage {
 	@FindBy(xpath="//p[text()='Dashboard']")private WebElement db;
 	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")private WebElement alert;
 	
-	public void enterUserName(String usernamevalue)
+	public void enterUserName(String username)
 	{
-		name.sendKeys(usernamevalue);
+		name.sendKeys(username);
 	}
 	
-	public void enterPassword(String passwordvalue)
+	public void enterPassword(String password)
 	{
-		pass.sendKeys(passwordvalue);
+		pass.sendKeys(password);
 	}
 	
 	public void submitClick()

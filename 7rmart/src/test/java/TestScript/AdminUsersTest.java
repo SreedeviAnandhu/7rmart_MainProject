@@ -1,7 +1,5 @@
 package TestScript;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.IOException;
 
 import org.testng.Assert;
@@ -15,7 +13,7 @@ import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base{
 	
-	@Test
+	@Test(retryAnalyzer=retry.Retry.class,description = "Testcase used to add admin users")
 	public void verifyTheUserIsAbleToCreateAAdminUser() throws IOException {
 		
 		
@@ -49,7 +47,7 @@ public class AdminUsersTest extends Base{
 		
 	}
 	
-	@Test
+	@Test(retryAnalyzer= retry.Retry.class,description = "Testcase used to delete admin details")
     public void verifyTheUserIsAbleToDeleteTheAdminUserDetails() throws IOException {
 		
 		String username = ExcelUtilities.readStringData(1, 0, "LoginPage");

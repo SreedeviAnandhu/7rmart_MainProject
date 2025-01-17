@@ -10,8 +10,9 @@ import Pages.ManageNewsPage;
 import utilities.ExcelUtilities;
 
 public class ManageNewsTest extends Base {
-	@Test
-	public void verifyTheUserIsAbleToLoginUsingValidCredentials() throws IOException
+	
+	@Test(retryAnalyzer= retry.Retry.class,description = "Testcase used to add news",groups= {"regression"})
+	public void verifyTheUserIsAbleToAddTheNews() throws IOException
 	{
 		String username = ExcelUtilities.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtilities.readStringData(1, 1, "LoginPage");

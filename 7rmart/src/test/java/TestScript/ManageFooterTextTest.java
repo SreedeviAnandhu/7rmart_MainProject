@@ -11,7 +11,7 @@ import utilities.ExcelUtilities;
 
 public class ManageFooterTextTest extends Base{
 	
-	@Test
+	@Test(retryAnalyzer= retry.Retry.class,description = "Testcase used to update the footertext")
 	public void verifyTheUserIsAbleToUpdateTheFooterText() throws IOException
 	{
 		String username =  ExcelUtilities.readStringData(1, 0, "LoginPage");

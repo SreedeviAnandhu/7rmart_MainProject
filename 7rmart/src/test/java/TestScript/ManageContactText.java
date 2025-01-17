@@ -9,9 +9,10 @@ import Pages.LoginPage;
 import Pages.ManageContactPage;
 import utilities.ExcelUtilities;
 
+
 public class ManageContactText extends Base{
 	
-	@Test
+	@Test(retryAnalyzer= retry.Retry.class,description = "Testcase used to update the contact information",groups= {"regression"})
 	public void verifyTheUserIsAbleToUpdateTheContactInformation() throws IOException
 	{
 		String username = ExcelUtilities.readStringData(1, 0, "LoginPage");

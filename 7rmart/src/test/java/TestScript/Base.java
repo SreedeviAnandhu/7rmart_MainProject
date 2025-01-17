@@ -19,11 +19,11 @@ public class Base {
 	public WebDriver driver;
 	public ScreenShotUtility scrshot;
 	
-	@BeforeMethod
-//	@Parameters("browser")
-	public void initializeBrowser(/*String browser*/) throws Exception
+	@BeforeMethod(alwaysRun = true)
+	@Parameters("browser")
+	public void initializeBrowser(String browser) throws Exception
 	{
-	/*	if(browser.equalsIgnoreCase("chrome"))
+		if(browser.equalsIgnoreCase("chrome"))
 		{
 			driver = new ChromeDriver();
 		}
@@ -36,15 +36,15 @@ public class Base {
 		else {
 			throw new Exception("invalid browser");
 		}
-	*/	
-		driver = new ChromeDriver();
+		
+//	driver = new ChromeDriver();
 		driver.get("https://groceryapp.uniqassosiates.com/admin"); //to launch a site get method is used
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize(); //window maximize chyan 
 		
 	}
 		
-		@AfterMethod
+		@AfterMethod(alwaysRun = true)
 	public void browserQuit(ITestResult iTestResult) throws IOException {
 		if (iTestResult.getStatus() == ITestResult.FAILURE) {
 			scrshot = new ScreenShotUtility();

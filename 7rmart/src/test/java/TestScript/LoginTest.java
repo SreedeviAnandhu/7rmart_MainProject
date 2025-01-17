@@ -13,19 +13,19 @@ import Pages.LoginPage;
 import utilities.ExcelUtilities;
 
 public class LoginTest extends Base{
-//	@DataProvider(name = "credentials")
+	@DataProvider(name = "credentials")
 	public Object[][] testData(){
 		Object data[][] = {{"admin","admin"},{"admin","hello"},{"srree","admin"}};
 		return data;
 	}
 	
-	@Test //(dataProvider = "credentials")
-	public void verifyTheUserIsAbleToLoginUsingValidCredentials() throws IOException
+	@Test (/*dataProvider = "credentials",*/description = "test case used to login using valid Credentials",groups= {"regression"})
+	public void verifyTheUserIsAbleToLoginUsingValidCredentials(/*String username,String password*/) throws IOException
 	{
 	
-  /*   String username= "admin";
-     String password= "admin";
-*/		
+   //  String username= "admin";
+    // String password= "admin";
+		
 	String username = ExcelUtilities.readStringData(1, 0, "LoginPage");
 	String password = ExcelUtilities.readStringData(1, 1, "LoginPage");
 		
